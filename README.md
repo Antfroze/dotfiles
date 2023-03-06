@@ -1,4 +1,4 @@
-![image]()
+![image](https://raw.githubusercontent.com/Antfroze/dotfiles/master/assets/showcase.png)
 
 ## Antfroze's dotfiles
 
