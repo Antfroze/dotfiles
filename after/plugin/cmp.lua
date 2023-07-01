@@ -1,4 +1,5 @@
 local cmp_present, cmp = pcall(require, "cmp")
+local lspkind = require 'lspkind'
 
 if not cmp_present then
     return
@@ -17,34 +18,6 @@ local check_backspace = function()
     return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
-local kind_icons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "",
-    Interface = "",
-    Module = "",
-    Property = "",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = ""
-}
-
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -54,9 +27,9 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), {"i", "c"}),
-        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), {"i", "c"}),
-        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close()
@@ -78,7 +51,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {"i", "s"}),
+        end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -87,12 +60,12 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {"i", "s"})
+        end, { "i", "s" })
     }),
     formatting = {
-        fields = {"kind", "abbr", "menu"},
+        fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-            vim_item.kind = kind_icons[vim_item.kind]
+            vim_item.kind = lspkind.symbolic(vim_item.kind) or vim_item.kind
 
             vim_item.menu = ({
                 nvim_lsp = "",
@@ -105,7 +78,7 @@ cmp.setup({
             return vim_item
         end
     },
-    sources = {{
+    sources = { {
         name = "nvim_lsp"
     }, {
         name = "luasnip"
@@ -117,7 +90,7 @@ cmp.setup({
         name = "buffer"
     }, {
         name = "treesitter"
-    }},
+    } },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false

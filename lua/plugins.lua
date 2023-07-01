@@ -2,7 +2,7 @@ local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
     if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+        fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
 
         print("Installing packer...")
 
@@ -42,6 +42,8 @@ return require("packer").startup({
 
         -- surround selections
         use("kylechui/nvim-surround")
+
+        use 'onsails/lspkind-nvim' -- vscode-like pictograms
 
         -- quick motions
         use({
@@ -94,7 +96,7 @@ return require("packer").startup({
         use({
             "nvim-telescope/telescope.nvim",
             tag = "0.1.2",
-            requires = { { "nvim-lua/plenary.nvim" } }
+            requires = {{"nvim-lua/plenary.nvim"}}
         })
 
         -- telescope code actions ui
