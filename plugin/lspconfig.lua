@@ -45,31 +45,31 @@ local on_attach = function(client, bufnr)
     })
 end
 
-protocol.CompletionItemKind = {"", -- Text
-"", -- Method
-"", -- Function
-"", -- Constructor
-"", -- Field
-"", -- Variable
-"", -- Class
-"ﰮ", -- Interface
-"", -- Module
-"", -- Property
-"", -- Unit
-"", -- Value
-"", -- Enum
-"", -- Keyword
-"﬌", -- Snippet
-"", -- Color
-"", -- File
-"", -- Reference
-"", -- Folder
-"", -- EnumMember
-"", -- Constant
-"", -- Struct
-"", -- Event
-"ﬦ", -- Operator
-"" -- TypeParameter
+protocol.CompletionItemKind = { "", -- Text
+    "",                          -- Method
+    "",                          -- Function
+    "",                          -- Constructor
+    "",                          -- Field
+    "",                          -- Variable
+    "",                          -- Class
+    "ﰮ",                          -- Interface
+    "",                          -- Module
+    "",                          -- Property
+    "",                          -- Unit
+    "",                          -- Value
+    "",                          -- Enum
+    "",                          -- Keyword
+    "﬌",                          -- Snippet
+    "",                          -- Color
+    "",                          -- File
+    "",                          -- Reference
+    "",                          -- Folder
+    "",                          -- EnumMember
+    "",                          -- Constant
+    "",                          -- Struct
+    "",                          -- Event
+    "ﬦ",                          -- Operator
+    ""                           -- TypeParameter
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -77,7 +77,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 nvim_lsp.tsserver.setup({
     on_attach = on_attach,
-    cmd = {"typescript-language-server", "--stdio"},
+    cmd = { "typescript-language-server", "--stdio" },
     capabilities = capabilities
 })
 
@@ -87,7 +87,7 @@ nvim_lsp.lua_ls.setup({
         Lua = {
             diagnostics = {
                 -- recognize the `vim` global
-                globals = {"vim"}
+                globals = { "vim" }
             },
             workspace = {
                 -- neovim runtime files
@@ -125,10 +125,10 @@ nvim_lsp.rust_analyzer.setup({
 nvim_lsp.svelte.setup({})
 
 local signs = {
-    Error = " ",
-    Warn = " ",
-    Hint = " ",
-    Info = " "
+    Error = "",
+    Warn = "",
+    Hint = "",
+    Info = ""
 }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type

@@ -126,7 +126,10 @@ return require("packer").startup({
         use("jose-elias-alvarez/null-ls.nvim")
 
         -- diagnostics list
-        use("folke/trouble.nvim")
+        use({
+            "folke/trouble.nvim",
+            dependencies = {"nvim-tree/nvim-web-devicons"}
+        })
 
         -- autocompletion
         use("hrsh7th/nvim-cmp")
