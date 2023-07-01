@@ -1,4 +1,4 @@
-![image](https://raw.githubusercontent.com/Antfroze/dotfiles/main/assets/showcase.png)
+![image](https://github.com/Antfroze/dotfiles/blob/main/assets/showcase.png?raw=true)
 
 ## Antfroze's dotfiles
 
