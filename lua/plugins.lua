@@ -46,7 +46,14 @@ return require("packer").startup({
         -- surround selections
         use("kylechui/nvim-surround")
 
-        use("onsails/lspkind-nvim") -- vscode-like pictograms
+        -- vscode-like pictograms
+        use("onsails/lspkind-nvim")
+
+        -- tmux integration
+        use({
+            "aserowy/tmux.nvim",
+            config = function() return require("tmux").setup() end
+        })
 
         -- quick motions
         use({
