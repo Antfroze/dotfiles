@@ -2,7 +2,7 @@ local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
     if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+        fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
 
         print("Installing packer...")
 
@@ -29,7 +29,10 @@ return require("packer").startup({
         use("wbthomason/packer.nvim")
 
         -- color scheme
-        use("kvrohit/mellow.nvim")
+        use({
+            "rose-pine/neovim",
+            as = "rose-pine"
+        })
 
         -- icons
         use("kyazdani42/nvim-web-devicons")
@@ -43,7 +46,7 @@ return require("packer").startup({
         -- surround selections
         use("kylechui/nvim-surround")
 
-        use 'onsails/lspkind-nvim' -- vscode-like pictograms
+        use("onsails/lspkind-nvim") -- vscode-like pictograms
 
         -- quick motions
         use({
@@ -58,11 +61,11 @@ return require("packer").startup({
         })
 
         -- tabs
-        use {
-            'akinsho/bufferline.nvim',
+        use({
+            "akinsho/bufferline.nvim",
             tag = "*",
-            requires = 'nvim-tree/nvim-web-devicons'
-        }
+            requires = "nvim-tree/nvim-web-devicons"
+        })
 
         -- automatic bracket pairs
         use("windwp/nvim-autopairs")
@@ -96,7 +99,7 @@ return require("packer").startup({
         use({
             "nvim-telescope/telescope.nvim",
             tag = "0.1.2",
-            requires = {{"nvim-lua/plenary.nvim"}}
+            requires = { { "nvim-lua/plenary.nvim" } }
         })
 
         -- telescope code actions ui
@@ -128,7 +131,7 @@ return require("packer").startup({
         -- diagnostics list
         use({
             "folke/trouble.nvim",
-            dependencies = {"nvim-tree/nvim-web-devicons"}
+            dependencies = { "nvim-tree/nvim-web-devicons" }
         })
 
         -- autocompletion
