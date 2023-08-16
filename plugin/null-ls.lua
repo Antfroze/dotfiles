@@ -6,7 +6,7 @@ local code_actions = null_ls.builtins.code_actions
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
-    sources = {formatting.stylua, formatting.prettierd, formatting.prismaFmt, formatting.rustfmt, formatting.gofmt,
+    sources = {formatting.stylua, formatting.prettier, formatting.prismaFmt, formatting.rustfmt, formatting.gofmt,
                formatting.mix, formatting.black},
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

@@ -13,7 +13,8 @@
 Requires [Neovim](https://neovim.io/) (>= 0.9)
 
 -   [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) - A plugin manager for Neovim
--   [rose-pine/neovim](https://github.com/rose-pine/neovim) - Soho vibes for Neovim
+-   [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material) - Gruvbox with Material Palette
+-   [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) - A neovim lua plugin to help easily manage multiple terminal windows
 -   [akinsho/bufferline.nvim](https://github.com/bufferline.nvim) - A snazzy bufferline
 -   [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - [Treesitter](https://github.com/tree-sitter/tree-sitter) configurations and abstraction layer for Neovim
 -   [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) - Lua `fork` of vim-web-devicons for Neovim

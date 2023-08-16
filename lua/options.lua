@@ -1,10 +1,10 @@
 local opt = vim.opt
 
--- 4 spaces for each indentation
-opt.shiftwidth = 4
--- insert 4 spaces for tab while editing
-opt.tabstop = 4
-opt.softtabstop = 4
+-- 2 spaces for each indentation
+opt.shiftwidth = 2
+-- insert 2 spaces for tab while editing
+opt.tabstop = 2
+opt.softtabstop = 2
 opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete in milliseconds
 opt.completeopt = "menuone,noselect" -- for autocomplete which we'll be doing in the future
 opt.splitbelow = true -- force all horizontal splits to go below current window
@@ -13,7 +13,7 @@ opt.termguicolors = true -- enable 2 bit RGB colors, most modern terminal emulat
 opt.autoindent = true -- auto indent when using `o` or `O`
 opt.smartindent = true -- smart indenting
 opt.wrap = false -- wrap lines
-opt.cmdheight = 2 -- height of command bar
+opt.cmdheight = 1 -- height of command bar
 opt.fileencoding = "utf-8" -- encoding of files
 opt.mouse = "a" -- enable mouse in all modes, for more options see :help 'mouse'
 opt.ignorecase = true -- ignore case while searching
