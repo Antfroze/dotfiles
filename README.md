@@ -2,13 +2,13 @@
 
 ## Antfroze's dotfiles
 
-**Warning**: Don't blindly use my settings unless you know what that entails. Use at your own risk!
+🚧 **Warning**: Don't blindly use my config unless you know what that entails. Use at your own risk!
 
-## Contents
+## 🎒 Contents
 
 -   Neovim config
 
-## Neovim setup
+## ⚙️ Neovim setup
 
 Requires [Neovim](https://neovim.io/) (>= 0.9)
 
